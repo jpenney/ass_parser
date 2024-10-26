@@ -1,4 +1,6 @@
 """AssStyleList definition."""
+from __future__ import annotations
+
 from typing import Any, Optional
 
 from ass_parser.ass_color import AssColor

@@ -1,4 +1,6 @@
 """Tests for the ObservableObjectMixin class."""
+from __future__ import annotations
+
 from dataclasses import dataclass
 from typing import Type
 from unittest.mock import Mock

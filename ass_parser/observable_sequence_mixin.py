@@ -1,4 +1,6 @@
 """ObservableSequenceMixin definition."""
+from __future__ import annotations
+
 from collections.abc import Iterable, MutableSequence
 from dataclasses import dataclass
 from typing import Any, Generic, TypeVar, Union, overload
@@ -71,7 +73,7 @@ class ObservableSequenceMixin(MutableSequence[TItem]):
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         """Initialize self."""
-        super().__init__(*args, **kwargs)  # type: ignore
+        super().__init__(*args, **kwargs)
         self._data: list[TItem] = []
 
     def __len__(self) -> int:

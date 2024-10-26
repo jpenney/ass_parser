@@ -1,4 +1,6 @@
 """AssBaseTabularSection definition."""
+from __future__ import annotations
+
 from collections.abc import Iterable, MutableSequence
 from typing import Generic, TypeVar
 

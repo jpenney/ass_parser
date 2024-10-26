@@ -56,7 +56,7 @@ def test_basic_delete() -> None:
     seq = DummySequence()
     seq.append(123)
     del seq[0]
-    assert list(seq) == []
+    assert not list(seq)
 
 
 def test_basic_delete_emits_removal_event() -> None:

@@ -1,4 +1,6 @@
 """ObservableMappingMixin definition."""
+from __future__ import annotations
+
 from collections.abc import Iterable, Iterator, Mapping, MutableMapping
 from dataclasses import dataclass
 from typing import Any, TypeVar, Union, cast, overload
@@ -23,7 +25,7 @@ class ObservableMappingMixin(MutableMapping[TKey, TValue]):
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         """Initialize self."""
-        super().__init__(*args, **kwargs)  # type: ignore
+        super().__init__(*args, **kwargs)
         self._data: dict[TKey, TValue] = {}
 
     def __getitem__(self, key: TKey) -> TValue:
@@ -73,7 +75,7 @@ class ObservableMappingMixin(MutableMapping[TKey, TValue]):
         self._data.clear()
         self.changed.emit(ObservableMappingChangeEvent())
 
-    @overload
+    @overload  # type: ignore
     def update(
         self, other: Mapping[TKey, TValue], /, **kwargs: TValue
     ) -> None:

@@ -1,10 +1,15 @@
 """AssStringTable definition."""
+
+from __future__ import annotations
+
+from typing import Dict, Tuple
+
 from ass_parser.ass_sections.ass_base_tabular_section import (
     AssBaseTabularSection,
 )
 from ass_parser.observable_sequence_mixin import ObservableSequenceMixin
 
-AssStringTableItem = tuple[str, dict[str, str]]
+AssStringTableItem = Tuple[str, Dict[str, str]]
 
 
 class AssStringTable(

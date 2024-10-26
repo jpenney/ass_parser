@@ -1,4 +1,6 @@
 """AssKeyValueMapping definition."""
+from __future__ import annotations
+
 from collections.abc import Iterable
 from typing import Any
 
@@ -25,8 +27,8 @@ class AssKeyValueMapping(ObservableMappingMixin[str, str], AssBaseSection):
                 raise CorruptAssLineError(
                     line_num, line, "expected a colon"
                 ) from exc
-            else:
-                self[key] = value.lstrip()
+
+            self[key] = value.lstrip()
 
     def produce_ass_body_lines(self) -> Iterable[str]:
         """Produce ASS text representation of self, excluding the ASS header

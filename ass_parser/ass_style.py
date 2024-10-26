@@ -126,5 +126,5 @@ class AssStyle(ObservableObjectMixin):
             key.startswith("_")
             or key == "parent"
             or getattr(self, key) == getattr(other, key)
-            for key in self.__dataclass_fields__  # type: ignore
+            for key in self.__dataclass_fields__
         )
